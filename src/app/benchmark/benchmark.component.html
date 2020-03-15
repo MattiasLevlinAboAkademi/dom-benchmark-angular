@@ -1,16 +1,17 @@
-<p>benchmark works!</p>
-<button
-    (click)="add10000Elements()"
->
-    Add 10,000 div elements
-</button>
 
-<button
-    (click)="remove10000Elements()"
->
-    Add 10,000 div elements
-</button>
+<h1>Data structure: For loop</h1>
 
-<div
-    [innerHtml]="htmlToAdd"
-></div>
+<!-- <div> Done with for loop -->
+<p>div</p>
+<button (click)="addEmptyDivs()">addEmptyDivs</button>
+<button (click)="addDivs()">addDivs</button>
+
+<!-- <svg> Done with for loop -->
+<p>svg</p>
+<button (click)="addEmptySvgs()">addEmptySvgs</button>
+<button (click)="addSvgs()">addSvgs</button>
+
+<p>remove</p>
+<button (click)="remove()">remove</button>
+
+<div #benchmarkContainer></div>
