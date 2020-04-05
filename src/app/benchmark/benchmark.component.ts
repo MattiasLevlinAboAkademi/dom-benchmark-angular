@@ -33,13 +33,15 @@ export class BenchmarkComponent {
   // 2 EDIT ONE 
   editOne() {
     this.asdf1 = performance.now()
-    // this.benchmarkContainer.nativeElement.innerHTML = '';
+    this.benchmarkContainer.nativeElement.children[0].textContent = Math.random()
   }
 
   // 3 EDIT ALL
   editAll() {
     this.asdf1 = performance.now()
-    // this.benchmarkContainer.nativeElement.innerHTML = '';
+    for (var i = 0; i < this.benchmarkContainer.nativeElement.children.length; i+=1) {
+      this.benchmarkContainer.nativeElement.children[i].textContent = Math.random()
+    }
   }
 
   // 4 REMOVE ONE
