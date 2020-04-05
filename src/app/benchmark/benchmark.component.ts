@@ -15,7 +15,7 @@ export class BenchmarkComponent {
 
   ngAfterViewChecked() {
     this.asdf2 = performance.now()
-    console.log('This shit took ', (this.asdf2 - this.asdf1), ' milliseconds')
+    console.log('This took ', (this.asdf2 - this.asdf1), ' milliseconds')
   }
 
   // 1 ADD DIVS
@@ -24,18 +24,34 @@ export class BenchmarkComponent {
     for (var i = 0; i <10000; i+=1) {
       var asd = this.renderer.createElement('div');
       this.renderer.setAttribute(asd, 'id', i.toString());
-      var text = this.renderer.createText('asd')
+      var text = this.renderer.createText('Div' + i.toString())
       this.renderer.appendChild(asd, text);
       this.renderer.appendChild(this.benchmarkContainer.nativeElement, asd);
     }
   }
 
+  // 2 EDIT ONE 
+  editOne() {
+    this.asdf1 = performance.now()
+    // this.benchmarkContainer.nativeElement.innerHTML = '';
+  }
+
+  // 3 EDIT ALL
+  editAll() {
+    this.asdf1 = performance.now()
+    // this.benchmarkContainer.nativeElement.innerHTML = '';
+  }
+
+  // 4 REMOVE ONE
+  removeOne() {
+    this.asdf1 = performance.now()
+    let asd = this.benchmarkContainer.nativeElement.children.length - 1
+    document.getElementById(asd.toString()).innerHTML = ''
+  }
+
   // 5 REMOVE ALL
-  remove() {
-    const childElements = this.benchmarkContainer.nativeElement.childNodes;
-    console.log(childElements.length)
-    for (let child of childElements) {
-      this.renderer.removeChild(this.benchmarkContainer.nativeElement, child);
-    }
+  removeAll() {
+    this.asdf1 = performance.now()
+    this.benchmarkContainer.nativeElement.innerHTML = '';
   }
 }
