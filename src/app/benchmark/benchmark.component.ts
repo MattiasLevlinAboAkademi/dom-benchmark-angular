@@ -3,7 +3,6 @@ import { ViewChild, ElementRef, Component, OnInit, Renderer2 } from '@angular/co
 @Component({
   selector: 'app-benchmark',
   templateUrl: './benchmark.component.html',
-  styleUrls: ['./benchmark.component.css']
 })
 
 export class BenchmarkComponent {
@@ -39,7 +38,7 @@ export class BenchmarkComponent {
   // 3 EDIT ALL
   editAll() {
     this.asdf1 = performance.now()
-    for (var i = 0; i < this.benchmarkContainer.nativeElement.children.length; i+=1) {
+    for (var i = 0; i < this.benchmarkContainer.nativeElement.children.length-1; i+=1) {
       this.benchmarkContainer.nativeElement.children[i].textContent = Math.random()
     }
   }
